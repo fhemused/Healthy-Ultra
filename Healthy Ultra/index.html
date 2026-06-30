@@ -1,10 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="ar">
 <head>
   <meta charset="UTF-8" />
   <title>Healthy Ultra | موقع صحي عصري شامل</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
   <!-- SEO أساسية -->
   <meta name="description" content="Healthy Ultra موقع صحي عصري شامل يجمع بين التمارين، الأكل الصحي، النظام الصحي العام، الوصفات، الحاسبات المتقدمة، مكتبة التمارين، مكتبة الأطعمة، والنصائح اليومية." />
   <meta name="keywords" content="Healthy Ultra, موقع صحي, تمارين, أكل صحي, حاسبات صحية, وصفات صحية, مكتبة التمارين, مكتبة الأطعمة, نصائح يومية" />
@@ -33,12 +32,13 @@
     }
 
     body {
-      font-family: "Tahoma", system-ui;
+      font-family: "Tahoma", system-ui, -apple-system, sans-serif;
       background: var(--white);
       color: var(--black);
       overflow-x: hidden;
       min-height: 100vh;
       transition: background 0.4s ease, color 0.4s ease;
+      font-size: 16px;
     }
 
     a {
@@ -56,55 +56,66 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 4vw;
+      padding: 10px 3vw;
       background: var(--glass);
       backdrop-filter: blur(18px);
       border-bottom: 2px solid var(--green-light);
       box-shadow: var(--shadow-soft);
       transition: 0.4s ease;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
     .logo {
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 2px;
+      flex-shrink: 0;
     }
 
     .logo-title {
       font-weight: bold;
-      font-size: 1.4rem;
+      font-size: 1.1rem;
       color: var(--green-dark);
-      letter-spacing: 0.08em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
-      padding: 6px 14px;
+      padding: 4px 10px;
       border-radius: 999px;
       border: 2px solid var(--green-dark);
       background: var(--white);
       box-shadow: var(--shadow-soft);
+      white-space: nowrap;
     }
 
     .logo-sub {
-      font-size: 0.8rem;
+      font-size: 0.65rem;
       color: var(--black);
       opacity: 0.7;
+      text-align: center;
+      white-space: normal;
     }
 
     nav.nav-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 5px;
       justify-content: center;
+      flex: 1;
+      min-width: 100%;
+      order: 3;
     }
 
     nav.nav-links a {
-      font-size: 0.8rem;
-      padding: 6px 10px;
+      font-size: 0.7rem;
+      padding: 5px 8px;
       border-radius: 999px;
       color: var(--black);
       background: var(--white);
-      border: 2px solid var(--green-light);
-      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--green-light);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
       transition: 0.3s ease;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
 
     nav.nav-links a:hover {
@@ -115,19 +126,21 @@
     .controls {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 4px;
+      flex-shrink: 0;
     }
 
     .btn {
       border-radius: 999px;
-      padding: 7px 12px;
-      font-size: 0.75rem;
+      padding: 5px 8px;
+      font-size: 0.65rem;
       cursor: pointer;
       border: none;
       background: var(--green-main);
       color: var(--black);
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
       transition: 0.3s ease;
+      white-space: nowrap;
     }
 
     .btn:hover {
@@ -157,7 +170,7 @@
     }
 
     body.dark-mode nav.nav-links a {
-      background: var(--glass-dark);
+      background: #1f2937;
       color: var(--green-light);
       border-color: var(--green-dark);
     }
@@ -175,23 +188,26 @@
     /* محتوى */
 
     main {
-      padding-top: 80px;
+      padding-top: 95px;
     }
 
     section {
-      padding: 40px 4vw 35px;
+      padding: 25px 3vw 20px;
       max-width: 1200px;
       margin: 0 auto;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
     }
 
     .section-header {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
 
     .section-title {
-      font-size: 1.8rem;
+      font-size: 1.4rem;
       margin-bottom: 8px;
       color: var(--black);
+      word-break: break-word;
     }
 
     body.dark-mode .section-title {
@@ -199,10 +215,11 @@
     }
 
     .section-subtitle {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       color: #475569;
-      max-width: 700px;
-      line-height: 1.7;
+      max-width: 100%;
+      line-height: 1.6;
+      word-break: break-word;
     }
 
     body.dark-mode .section-subtitle {
@@ -212,20 +229,21 @@
     /* المقدمة */
 
     #intro {
-      padding-top: 30px;
+      padding-top: 15px;
     }
 
     .intro-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 30px;
-      align-items: center;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: start;
     }
 
     .intro-main-title {
-      font-size: 2.1rem;
+      font-size: 1.5rem;
       margin-bottom: 10px;
       color: var(--black);
+      word-break: break-word;
     }
 
     body.dark-mode .intro-main-title {
@@ -233,10 +251,11 @@
     }
 
     .intro-main-subtitle {
-      font-size: 0.95rem;
+      font-size: 0.85rem;
       color: #4b5563;
-      margin-bottom: 16px;
-      line-height: 1.8;
+      margin-bottom: 12px;
+      line-height: 1.6;
+      word-break: break-word;
     }
 
     body.dark-mode .intro-main-subtitle {
@@ -244,10 +263,11 @@
     }
 
     .intro-extra-text {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: #4b5563;
-      line-height: 1.8;
+      line-height: 1.6;
       margin-top: 8px;
+      word-break: break-word;
     }
 
     body.dark-mode .intro-extra-text {
@@ -256,16 +276,18 @@
 
     .intro-images {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 8px;
+      width: 100%;
     }
 
     .intro-images img {
       width: 100%;
-      border-radius: 18px;
+      height: auto;
+      border-radius: 12px;
       object-fit: cover;
       border: 2px solid var(--green-light);
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
     }
 
     .intro-images img.big {
@@ -276,21 +298,23 @@
 
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
+      grid-template-columns: 1fr;
+      gap: 12px;
     }
 
     .card {
       background: var(--glass);
-      border-radius: 22px;
+      border-radius: 16px;
       border: 1px solid #e5e7eb;
-      padding: 16px;
+      padding: 12px;
       display: flex;
       flex-direction: column;
       gap: 8px;
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
       backdrop-filter: blur(12px);
       transition: 0.3s ease;
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
     body.dark-mode .card {
@@ -299,21 +323,23 @@
     }
 
     .card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
 
     .card img {
       width: 100%;
-      border-radius: 18px;
+      height: auto;
+      border-radius: 12px;
       object-fit: cover;
       border: 2px solid var(--green-light);
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
     }
 
     .card-title {
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: bold;
       color: var(--black);
+      word-break: break-word;
     }
 
     body.dark-mode .card-title {
@@ -321,9 +347,10 @@
     }
 
     .card-text {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       color: #4b5563;
-      line-height: 1.7;
+      line-height: 1.6;
+      word-break: break-word;
     }
 
     body.dark-mode .card-text {
@@ -334,20 +361,21 @@
 
     .calculators-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
+      grid-template-columns: 1fr;
+      gap: 12px;
     }
 
     .calc-card {
       background: var(--glass);
-      border-radius: 22px;
+      border-radius: 16px;
       border: 1px solid #e5e7eb;
-      padding: 16px;
+      padding: 12px;
       display: flex;
       flex-direction: column;
       gap: 6px;
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
       backdrop-filter: blur(12px);
+      word-break: break-word;
     }
 
     body.dark-mode .calc-card {
@@ -356,9 +384,10 @@
     }
 
     .calc-card h3 {
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       margin-bottom: 4px;
       color: var(--black);
+      word-break: break-word;
     }
 
     body.dark-mode .calc-card h3 {
@@ -366,8 +395,9 @@
     }
 
     .calc-card label {
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       color: #4b5563;
+      word-break: break-word;
     }
 
     body.dark-mode .calc-card label {
@@ -377,13 +407,13 @@
     .calc-card input,
     .calc-card select {
       width: 100%;
-      padding: 6px 8px;
-      border-radius: 16px;
+      padding: 8px;
+      border-radius: 12px;
       border: 1px solid #9ca3af;
       font-size: 0.8rem;
       background: #f9fafb;
       color: var(--black);
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 2px 4px rgba(15, 23, 42, 0.05);
     }
 
     body.dark-mode .calc-card input,
@@ -397,6 +427,7 @@
       margin-top: 6px;
       font-size: 0.8rem;
       color: var(--black);
+      word-break: break-word;
     }
 
     body.dark-mode .calc-result {
@@ -404,15 +435,16 @@
     }
 
     .calc-btn {
-      padding: 7px 12px;
-      border-radius: 20px;
+      padding: 8px 10px;
+      border-radius: 16px;
       background: var(--green-main);
       border: none;
       cursor: pointer;
-      box-shadow: var(--shadow-soft);
-      font-size: 0.8rem;
+      box-shadow: 0 2px 4px rgba(15, 23, 42, 0.05);
+      font-size: 0.75rem;
       transition: 0.3s ease;
       align-self: flex-start;
+      white-space: nowrap;
     }
 
     .calc-btn:hover {
@@ -424,14 +456,16 @@
 
     .info-box {
       background: var(--glass);
-      border-radius: 22px;
+      border-radius: 16px;
       border: 1px solid #e5e7eb;
-      padding: 16px;
-      font-size: 0.85rem;
+      padding: 12px;
+      font-size: 0.8rem;
       color: #4b5563;
-      line-height: 1.8;
-      box-shadow: var(--shadow-soft);
+      line-height: 1.7;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
       backdrop-filter: blur(12px);
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
     body.dark-mode .info-box {
@@ -442,6 +476,7 @@
 
     .info-box strong {
       color: var(--black);
+      word-break: break-word;
     }
 
     body.dark-mode .info-box strong {
@@ -449,21 +484,27 @@
     }
 
     .info-box p strong {
-      display: inline-block;
-      margin-right: 6px;
+      display: inline;
+      margin-right: 4px;
+    }
+
+    .info-box p {
+      margin-bottom: 8px;
     }
 
     /* فوتر */
 
     footer {
-      padding: 16px 4vw;
+      padding: 12px 3vw;
       text-align: center;
       background: var(--glass);
       backdrop-filter: blur(12px);
       border-top: 2px solid var(--green-light);
-      box-shadow: var(--shadow-soft);
-      margin-top: 30px;
-      font-size: 0.8rem;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+      margin-top: 20px;
+      font-size: 0.75rem;
+      word-break: break-word;
+      line-height: 1.6;
     }
 
     footer strong {
@@ -474,14 +515,14 @@
 
     #scrollTopBtn {
       position: fixed;
-      bottom: 18px;
-      left: 18px;
-      padding: 8px 12px;
+      bottom: 12px;
+      left: 12px;
+      padding: 8px 10px;
       border-radius: 999px;
       background: var(--green-main);
       border: none;
       cursor: pointer;
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
       font-size: 0.8rem;
       display: none;
       z-index: 150;
@@ -492,78 +533,104 @@
       color: var(--white);
     }
 
-    /* Responsive */
+    /* Responsive - Desktop */
 
-    @media (max-width: 900px) {
+    @media (min-width: 901px) {
       header.navbar {
-        flex-direction: column;
-        gap: 6px;
-        padding: 8px 3vw;
-      }
-
-      nav.nav-links {
-        justify-content: center;
-      }
-
-      .intro-layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .section-title {
-        font-size: 1.5rem;
+        flex-wrap: nowrap;
+        padding: 10px 4vw;
       }
 
       .logo-title {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+        padding: 6px 14px;
       }
-    }
 
-    @media (max-width: 600px) {
+      .logo-sub {
+        font-size: 0.8rem;
+      }
+
       nav.nav-links {
-        max-width: 100%;
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding-bottom: 4px;
+        order: 2;
+        flex: initial;
+        min-width: auto;
       }
 
       nav.nav-links a {
-        white-space: nowrap;
+        font-size: 0.8rem;
+        padding: 6px 10px;
+        border: 2px solid var(--green-light);
       }
 
-      main {
-        padding-top: 90px;
-      }
-
-      section {
-        padding: 30px 3vw 25px;
-      }
-
-      .intro-main-title {
-        font-size: 1.6rem;
-      }
-
-      .intro-images img {
-        border-radius: 14px;
-      }
-
-      .card {
-        padding: 14px;
-        border-radius: 18px;
-      }
-
-      .calc-card {
-        padding: 14px;
-        border-radius: 18px;
+      .controls {
+        gap: 6px;
       }
 
       .btn {
-        padding: 6px 10px;
-        font-size: 0.7rem;
+        padding: 7px 12px;
+        font-size: 0.75rem;
       }
 
-      #scrollTopBtn {
-        bottom: 14px;
-        left: 14px;
+      main {
+        padding-top: 80px;
+      }
+
+      section {
+        padding: 40px 4vw 35px;
+      }
+
+      .intro-layout {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        gap: 30px;
+      }
+
+      .intro-main-title {
+        font-size: 2.1rem;
+      }
+
+      .intro-images {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .section-title {
+        font-size: 1.8rem;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 18px;
+      }
+
+      .card {
+        padding: 16px;
+        border-radius: 22px;
+      }
+
+      .card-title {
+        font-size: 1rem;
+      }
+
+      .card-text {
+        font-size: 0.85rem;
+      }
+
+      .calculators-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 18px;
+      }
+
+      .calc-card {
+        padding: 16px;
+        border-radius: 22px;
+      }
+
+      .calc-card h3 {
+        font-size: 0.95rem;
+      }
+
+      footer {
+        padding: 16px 4vw;
+        font-size: 0.8rem;
       }
     }
   </style>
@@ -625,18 +692,18 @@
         </div>
         <div class="intro-images">
           <img
-            src="https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src="https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?auto=compress&cs=tinysrgb&w=600"
             alt="تمارين رياضية"
             class="big"
             loading="lazy"
           />
           <img
-            src="https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src="https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&w=600"
             alt="أكل صحي"
             loading="lazy"
           />
           <img
-            src="https://images.pexels.com/photos/4057693/pexels-photo-4057693.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src="https://images.pexels.com/photos/4057693/pexels-photo-4057693.jpeg?auto=compress&cs=tinysrgb&w=600"
             alt="نمط حياة صحي"
             loading="lazy"
           />
@@ -661,7 +728,7 @@
       <div class="cards-grid">
         <div class="card">
           <img
-            src="https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src="https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&cs=tinysrgb&w=600"
             alt="تمارين رياضية عامة"
             loading="lazy"
           />
@@ -675,7 +742,7 @@
 
         <div class="card">
           <img
-            src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600"
             alt="أكل صحي متوازن"
             loading="lazy"
           />
@@ -689,7 +756,7 @@
 
         <div class="card">
           <img
-            src="https://images.pexels.com/photos/4057698/pexels-photo-4057698.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src="https://images.pexels.com/photos/4057698/pexels-photo-4057698.jpeg?auto=compress&cs=tinysrgb&w=600"
             alt="نمط حياة صحي"
             loading="lazy"
           />
@@ -703,7 +770,7 @@
 
         <div class="card">
           <img
-            src="https://images.pexels.com/photos/3738762/pexels-photo-3738762.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src="https://images.pexels.com/photos/3738762/pexels-photo-3738762.jpeg?auto=compress&cs=tinysrgb&w=600"
             alt="حاسبات صحية"
             loading="lazy"
           />
@@ -733,7 +800,7 @@
       <div class="cards-grid">
         <div class="card">
           <img
-            src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=600"
             alt="تمرين الضغط"
             loading="lazy"
           />
@@ -747,7 +814,7 @@
 
         <div class="card">
           <img
-            src="https://images.pexels.com/photos/1552108/pexels-photo-1552108.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src="https://images.pexels.com/photos/1552108/pexels-photo-1552108.jpeg?auto=compress&cs=tinysrgb&w=600"
             alt="تمرين السكوات"
             loading="lazy"
           />
@@ -761,7 +828,7 @@
 
         <div class="card">
           <img
-            src="https://images.pexels.com/photos/3823063/pexels-photo-3823063.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src="https://images.pexels.com/photos/3823063/pexels-photo-3823063.jpeg?auto=compress&cs=tinysrgb&w=600"
             alt="تمارين اليوغا"
             loading="lazy"
           />
@@ -787,10 +854,9 @@
       </div>
 
       <div class="cards-grid">
-        <!-- وصفة جديدة بدل الشوفان: سلطة السبانخ مع الأفوكادو والتوت -->
         <div class="card">
           <img
-            src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=600"
             alt="سلطة السبانخ مع الأفوكادو والتوت"
             loading="lazy"
           />
@@ -808,7 +874,7 @@
 
         <div class="card">
           <img
-            src="https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src="https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&w=600"
             alt="فطور صحي متكامل"
             loading="lazy"
           />
@@ -1337,4 +1403,3 @@
   </script>
 </body>
 </html>
-```
