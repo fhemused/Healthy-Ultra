@@ -1,0 +1,1340 @@
+```html
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>Healthy Ultra | موقع صحي عصري شامل</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- SEO أساسية -->
+  <meta name="description" content="Healthy Ultra موقع صحي عصري شامل يجمع بين التمارين، الأكل الصحي، النظام الصحي العام، الوصفات، الحاسبات المتقدمة، مكتبة التمارين، مكتبة الأطعمة، والنصائح اليومية." />
+  <meta name="keywords" content="Healthy Ultra, موقع صحي, تمارين, أكل صحي, حاسبات صحية, وصفات صحية, مكتبة التمارين, مكتبة الأطعمة, نصائح يومية" />
+  <meta name="author" content="فهد" />
+  <style>
+    :root {
+      --green-light: #b7f4c4;
+      --green-main: #4ade80;
+      --green-dark: #22c55e;
+      --white: #ffffff;
+      --black: #0f172a;
+      --shadow-soft: 0 8px 30px rgba(15, 23, 42, 0.12);
+      --glass: rgba(255, 255, 255, 0.7);
+      --glass-dark: rgba(15, 23, 42, 0.7);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      direction: rtl;
+    }
+
+    body {
+      font-family: "Tahoma", system-ui;
+      background: var(--white);
+      color: var(--black);
+      overflow-x: hidden;
+      min-height: 100vh;
+      transition: background 0.4s ease, color 0.4s ease;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* شريط التنقل */
+
+    header.navbar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 4vw;
+      background: var(--glass);
+      backdrop-filter: blur(18px);
+      border-bottom: 2px solid var(--green-light);
+      box-shadow: var(--shadow-soft);
+      transition: 0.4s ease;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .logo-title {
+      font-weight: bold;
+      font-size: 1.4rem;
+      color: var(--green-dark);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 2px solid var(--green-dark);
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .logo-sub {
+      font-size: 0.8rem;
+      color: var(--black);
+      opacity: 0.7;
+    }
+
+    nav.nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    nav.nav-links a {
+      font-size: 0.8rem;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--black);
+      background: var(--white);
+      border: 2px solid var(--green-light);
+      box-shadow: var(--shadow-soft);
+      transition: 0.3s ease;
+    }
+
+    nav.nav-links a:hover {
+      background: var(--green-light);
+      border-color: var(--green-dark);
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      border: none;
+      background: var(--green-main);
+      color: var(--black);
+      box-shadow: var(--shadow-soft);
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: var(--green-dark);
+      color: var(--white);
+    }
+
+    /* وضع داكن */
+
+    body.dark-mode {
+      background: #020617;
+      color: #e5e7eb;
+    }
+
+    body.dark-mode header.navbar {
+      background: var(--glass-dark);
+      border-bottom-color: var(--green-dark);
+    }
+
+    body.dark-mode .logo-title {
+      background: #020617;
+      color: var(--green-light);
+    }
+
+    body.dark-mode .logo-sub {
+      color: #e5e7eb;
+    }
+
+    body.dark-mode nav.nav-links a {
+      background: var(--glass-dark);
+      color: var(--green-light);
+      border-color: var(--green-dark);
+    }
+
+    body.dark-mode nav.nav-links a:hover {
+      background: var(--green-dark);
+      color: var(--white);
+    }
+
+    body.dark-mode .btn {
+      background: var(--green-dark);
+      color: var(--white);
+    }
+
+    /* محتوى */
+
+    main {
+      padding-top: 80px;
+    }
+
+    section {
+      padding: 40px 4vw 35px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      margin-bottom: 25px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+      color: var(--black);
+    }
+
+    body.dark-mode .section-title {
+      color: #e5e7eb;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: #475569;
+      max-width: 700px;
+      line-height: 1.7;
+    }
+
+    body.dark-mode .section-subtitle {
+      color: #cbd5e1;
+    }
+
+    /* المقدمة */
+
+    #intro {
+      padding-top: 30px;
+    }
+
+    .intro-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 30px;
+      align-items: center;
+    }
+
+    .intro-main-title {
+      font-size: 2.1rem;
+      margin-bottom: 10px;
+      color: var(--black);
+    }
+
+    body.dark-mode .intro-main-title {
+      color: #e5e7eb;
+    }
+
+    .intro-main-subtitle {
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+
+    body.dark-mode .intro-main-subtitle {
+      color: #cbd5e1;
+    }
+
+    .intro-extra-text {
+      font-size: 0.85rem;
+      color: #4b5563;
+      line-height: 1.8;
+      margin-top: 8px;
+    }
+
+    body.dark-mode .intro-extra-text {
+      color: #cbd5e1;
+    }
+
+    .intro-images {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .intro-images img {
+      width: 100%;
+      border-radius: 18px;
+      object-fit: cover;
+      border: 2px solid var(--green-light);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .intro-images img.big {
+      grid-column: span 2;
+    }
+
+    /* بطاقات */
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--glass);
+      border-radius: 22px;
+      border: 1px solid #e5e7eb;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+      transition: 0.3s ease;
+    }
+
+    body.dark-mode .card {
+      background: var(--glass-dark);
+      border-color: #1f2937;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 18px;
+      object-fit: cover;
+      border: 2px solid var(--green-light);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--black);
+    }
+
+    body.dark-mode .card-title {
+      color: #e5e7eb;
+    }
+
+    .card-text {
+      font-size: 0.85rem;
+      color: #4b5563;
+      line-height: 1.7;
+    }
+
+    body.dark-mode .card-text {
+      color: #cbd5e1;
+    }
+
+    /* الحاسبات */
+
+    .calculators-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .calc-card {
+      background: var(--glass);
+      border-radius: 22px;
+      border: 1px solid #e5e7eb;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    body.dark-mode .calc-card {
+      background: var(--glass-dark);
+      border-color: #1f2937;
+    }
+
+    .calc-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+      color: var(--black);
+    }
+
+    body.dark-mode .calc-card h3 {
+      color: #e5e7eb;
+    }
+
+    .calc-card label {
+      font-size: 0.8rem;
+      color: #4b5563;
+    }
+
+    body.dark-mode .calc-card label {
+      color: #cbd5e1;
+    }
+
+    .calc-card input,
+    .calc-card select {
+      width: 100%;
+      padding: 6px 8px;
+      border-radius: 16px;
+      border: 1px solid #9ca3af;
+      font-size: 0.8rem;
+      background: #f9fafb;
+      color: var(--black);
+      box-shadow: var(--shadow-soft);
+    }
+
+    body.dark-mode .calc-card input,
+    body.dark-mode .calc-card select {
+      background: #020617;
+      color: #e5e7eb;
+      border-color: #6b7280;
+    }
+
+    .calc-result {
+      margin-top: 6px;
+      font-size: 0.8rem;
+      color: var(--black);
+    }
+
+    body.dark-mode .calc-result {
+      color: #e5e7eb;
+    }
+
+    .calc-btn {
+      padding: 7px 12px;
+      border-radius: 20px;
+      background: var(--green-main);
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.8rem;
+      transition: 0.3s ease;
+      align-self: flex-start;
+    }
+
+    .calc-btn:hover {
+      background: var(--green-dark);
+      color: var(--white);
+    }
+
+    /* نصائح وتحليل وتواصل */
+
+    .info-box {
+      background: var(--glass);
+      border-radius: 22px;
+      border: 1px solid #e5e7eb;
+      padding: 16px;
+      font-size: 0.85rem;
+      color: #4b5563;
+      line-height: 1.8;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+
+    body.dark-mode .info-box {
+      background: var(--glass-dark);
+      border-color: #1f2937;
+      color: #cbd5e1;
+    }
+
+    .info-box strong {
+      color: var(--black);
+    }
+
+    body.dark-mode .info-box strong {
+      color: var(--green-main);
+    }
+
+    .info-box p strong {
+      display: inline-block;
+      margin-right: 6px;
+    }
+
+    /* فوتر */
+
+    footer {
+      padding: 16px 4vw;
+      text-align: center;
+      background: var(--glass);
+      backdrop-filter: blur(12px);
+      border-top: 2px solid var(--green-light);
+      box-shadow: var(--shadow-soft);
+      margin-top: 30px;
+      font-size: 0.8rem;
+    }
+
+    footer strong {
+      color: var(--green-dark);
+    }
+
+    /* زر للأعلى */
+
+    #scrollTopBtn {
+      position: fixed;
+      bottom: 18px;
+      left: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--green-main);
+      border: none;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+      font-size: 0.8rem;
+      display: none;
+      z-index: 150;
+    }
+
+    #scrollTopBtn:hover {
+      background: var(--green-dark);
+      color: var(--white);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      header.navbar {
+        flex-direction: column;
+        gap: 6px;
+        padding: 8px 3vw;
+      }
+
+      nav.nav-links {
+        justify-content: center;
+      }
+
+      .intro-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .logo-title {
+        font-size: 1.2rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav.nav-links {
+        max-width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+
+      nav.nav-links a {
+        white-space: nowrap;
+      }
+
+      main {
+        padding-top: 90px;
+      }
+
+      section {
+        padding: 30px 3vw 25px;
+      }
+
+      .intro-main-title {
+        font-size: 1.6rem;
+      }
+
+      .intro-images img {
+        border-radius: 14px;
+      }
+
+      .card {
+        padding: 14px;
+        border-radius: 18px;
+      }
+
+      .calc-card {
+        padding: 14px;
+        border-radius: 18px;
+      }
+
+      .btn {
+        padding: 6px 10px;
+        font-size: 0.7rem;
+      }
+
+      #scrollTopBtn {
+        bottom: 14px;
+        left: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- شريط التنقل -->
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-title">Healthy Ultra</span>
+      <span class="logo-sub" data-ar="نظام صحي عصري شامل" data-en="Modern Complete Health System">
+        نظام صحي عصري شامل
+      </span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#intro" data-ar="المقدمة" data-en="Intro">المقدمة</a>
+      <a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
+      <a href="#workout" data-ar="التمارين" data-en="Workouts">التمارين</a>
+      <a href="#nutrition" data-ar="الأكل الصحي" data-en="Nutrition">الأكل الصحي</a>
+      <a href="#lifestyle" data-ar="النظام الصحي" data-en="Lifestyle">النظام الصحي</a>
+      <a href="#recipes" data-ar="الوصفات" data-en="Recipes">الوصفات</a>
+      <a href="#calculators" data-ar="الحاسبات" data-en="Calculators">الحاسبات</a>
+      <a href="#exercise-library" data-ar="مكتبة التمارين" data-en="Exercise Library">مكتبة التمارين</a>
+      <a href="#food-library" data-ar="مكتبة الأطعمة" data-en="Food Library">مكتبة الأطعمة</a>
+      <a href="#daily-tips" data-ar="نصائح يومية" data-en="Daily Tips">نصائح يومية</a>
+      <a href="#analysis" data-ar="تحليل صحتك" data-en="Health Analysis">تحليل صحتك</a>
+      <a href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a>
+    </nav>
+
+    <div class="controls">
+      <button class="btn" id="langToggle">English / عربي</button>
+      <button class="btn" id="themeToggle" data-ar="تبديل الخلفية" data-en="Toggle Theme">تبديل الخلفية</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- المقدمة -->
+    <section id="intro">
+      <div class="intro-layout">
+        <div>
+          <h1 class="intro-main-title"
+              data-ar="مقدمة موقع Healthy Ultra الصحي العصري"
+              data-en="Healthy Ultra Modern Health Introduction">
+            مقدمة موقع Healthy Ultra الصحي العصري
+          </h1>
+          <p class="intro-main-subtitle"
+             data-ar="موقع صحي متكامل يجمع بين التمارين، الأكل الصحي، النظام الصحي العام، الوصفات، الحاسبات المتقدمة، مكتبة التمارين، مكتبة الأطعمة، والنصائح اليومية."
+             data-en="A complete health website combining workouts, healthy nutrition, lifestyle, recipes, advanced calculators, exercise library, food library, and daily tips.">
+            موقع صحي متكامل يجمع بين التمارين، الأكل الصحي، النظام الصحي العام، الوصفات، الحاسبات المتقدمة،
+            مكتبة التمارين، مكتبة الأطعمة، والنصائح اليومية.
+          </p>
+          <p class="intro-extra-text"
+             data-ar="تم تصميم Healthy Ultra ليكون نقطة بداية عملية لأي شخص يريد تحسين صحته بشكل تدريجي، مع التركيز على التوازن بين الحركة، التغذية، النوم، والصحة النفسية."
+             data-en="Healthy Ultra is designed as a practical starting point for anyone who wants to improve health gradually, focusing on balance between movement, nutrition, sleep, and mental health.">
+            تم تصميم Healthy Ultra ليكون نقطة بداية عملية لأي شخص يريد تحسين صحته بشكل تدريجي، مع التركيز على
+            التوازن بين الحركة، التغذية، النوم، والصحة النفسية.
+          </p>
+        </div>
+        <div class="intro-images">
+          <img
+            src="https://images.pexels.com/photos/1552249/pexels-photo-1552249.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="تمارين رياضية"
+            class="big"
+            loading="lazy"
+          />
+          <img
+            src="https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="أكل صحي"
+            loading="lazy"
+          />
+          <img
+            src="https://images.pexels.com/photos/4057693/pexels-photo-4057693.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="نمط حياة صحي"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- الرئيسية -->
+    <section id="home">
+      <div class="section-header">
+        <h2 class="section-title" data-ar="الصفحة الرئيسية" data-en="Home">
+          الصفحة الرئيسية
+        </h2>
+        <p class="section-subtitle"
+           data-ar="نظرة عامة على محتوى Healthy Ultra: التمارين، الأكل الصحي، النظام الصحي العام، الوصفات، الحاسبات، مكتبة التمارين، مكتبة الأطعمة، النصائح اليومية، وتحليل صحتك."
+           data-en="Overview of Healthy Ultra content: workouts, healthy nutrition, lifestyle, recipes, calculators, exercise library, food library, daily tips, and health analysis.">
+          نظرة عامة على محتوى Healthy Ultra: التمارين، الأكل الصحي، النظام الصحي العام، الوصفات، الحاسبات،
+          مكتبة التمارين، مكتبة الأطعمة، النصائح اليومية، وتحليل صحتك.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <img
+            src="https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="تمارين رياضية عامة"
+            loading="lazy"
+          />
+          <h3 class="card-title" data-ar="التمارين الرياضية" data-en="Workouts">التمارين الرياضية</h3>
+          <p class="card-text"
+             data-ar="تمارين متنوعة لتحسين القوة، اللياقة، وصحة القلب، تشمل تمارين الضغط، السكوات، اليوغا، وتمارين HIIT."
+             data-en="Various exercises to improve strength, fitness, and heart health, including push-ups, squats, yoga, and HIIT.">
+            تمارين متنوعة لتحسين القوة، اللياقة، وصحة القلب، تشمل تمارين الضغط، السكوات، اليوغا، وتمارين HIIT.
+          </p>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="أكل صحي متوازن"
+            loading="lazy"
+          />
+          <h3 class="card-title" data-ar="الأكل الصحي" data-en="Healthy Nutrition">الأكل الصحي</h3>
+          <p class="card-text"
+             data-ar="أطعمة متوازنة تدعم الطاقة والمناعة، مثل الفطور الصحي، وجبات البروتين، الخضروات الملونة، السناك الصحي."
+             data-en="Balanced foods that support energy and immunity, such as healthy breakfast, protein meals, colorful vegetables, and healthy snacks.">
+            أطعمة متوازنة تدعم الطاقة والمناعة، مثل الفطور الصحي، وجبات البروتين، الخضروات الملونة، السناك الصحي.
+          </p>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.pexels.com/photos/4057698/pexels-photo-4057698.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="نمط حياة صحي"
+            loading="lazy"
+          />
+          <h3 class="card-title" data-ar="النظام الصحي العام" data-en="Healthy Lifestyle">النظام الصحي العام</h3>
+          <p class="card-text"
+             data-ar="توازن بين النوم، الحركة اليومية، التغذية، والصحة النفسية، مع نصائح عملية لتحسين نمط حياتك."
+             data-en="Balance between sleep, daily movement, nutrition, and mental health, with practical tips to improve your lifestyle.">
+            توازن بين النوم، الحركة اليومية، التغذية، والصحة النفسية، مع نصائح عملية لتحسين نمط حياتك.
+          </p>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.pexels.com/photos/3738762/pexels-photo-3738762.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="حاسبات صحية"
+            loading="lazy"
+          />
+          <h3 class="card-title" data-ar="الحاسبات الصحية" data-en="Health Calculators">الحاسبات الصحية</h3>
+          <p class="card-text"
+             data-ar="مجموعة حاسبات متقدمة للسعرات الحرارية، مؤشر كتلة الجسم، نسبة الدهون، كمية الماء، وكمية البروتين اليومية."
+             data-en="Advanced calculators for calories, BMI, fat percentage, daily water, and daily protein.">
+            مجموعة حاسبات متقدمة للسعرات الحرارية، مؤشر كتلة الجسم، نسبة الدهون، كمية الماء، وكمية البروتين اليومية.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- التمارين -->
+    <section id="workout">
+      <div class="section-header">
+        <h2 class="section-title" data-ar="التمارين الرياضية المهمة" data-en="Important Workouts">
+          التمارين الرياضية المهمة
+        </h2>
+        <p class="section-subtitle"
+           data-ar="تمارين أساسية لتحسين القوة واللياقة وصحة القلب، مع صور حقيقية لكل تمرين ومعلومات عن الفوائد والمدة وعدد التكرارات."
+           data-en="Basic exercises to improve strength, fitness, and heart health, with real images and information about benefits, duration, and repetitions.">
+          تمارين أساسية لتحسين القوة واللياقة وصحة القلب، مع صور حقيقية لكل تمرين ومعلومات عن الفوائد والمدة وعدد التكرارات.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <img
+            src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="تمرين الضغط"
+            loading="lazy"
+          />
+          <h3 class="card-title" data-ar="تمرين الضغط (Push-up)" data-en="Push-up">تمرين الضغط (Push-up)</h3>
+          <p class="card-text"
+             data-ar="يقوي عضلات الصدر والكتفين والذراعين، ويحسن ثبات الجسم."
+             data-en="Strengthens chest, shoulders, and arms, and improves body stability.">
+            يقوي عضلات الصدر والكتفين والذراعين، ويحسن ثبات الجسم.
+          </p>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.pexels.com/photos/1552108/pexels-photo-1552108.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="تمرين السكوات"
+            loading="lazy"
+          />
+          <h3 class="card-title" data-ar="تمرين السكوات (Squat)" data-en="Squat">تمرين السكوات (Squat)</h3>
+          <p class="card-text"
+             data-ar="يقوي عضلات الأرجل والظهر، ويرفع معدل الحرق ويحسن التوازن."
+             data-en="Strengthens legs and back, increases calorie burn, and improves balance.">
+            يقوي عضلات الأرجل والظهر، ويرفع معدل الحرق ويحسن التوازن.
+          </p>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.pexels.com/photos/3823063/pexels-photo-3823063.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="تمارين اليوغا"
+            loading="lazy"
+          />
+          <h3 class="card-title" data-ar="تمارين اليوغا (Yoga)" data-en="Yoga">تمارين اليوغا (Yoga)</h3>
+          <p class="card-text"
+             data-ar="تحسن المرونة والصحة النفسية وتقلل التوتر."
+             data-en="Improves flexibility and mental health, and reduces stress.">
+            تحسن المرونة والصحة النفسية وتقلل التوتر.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- الأكل الصحي -->
+    <section id="nutrition">
+      <div class="section-header">
+        <h2 class="section-title" data-ar="الأكل الصحي" data-en="Healthy Nutrition">الأكل الصحي</h2>
+        <p class="section-subtitle"
+           data-ar="أطعمة متوازنة تدعم الطاقة والمناعة وصحة الجسم، مع صور حقيقية لكل طبق."
+           data-en="Balanced foods that support energy, immunity, and body health, with real images for each dish.">
+          أطعمة متوازنة تدعم الطاقة والمناعة وصحة الجسم، مع صور حقيقية لكل طبق.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <!-- وصفة جديدة بدل الشوفان: سلطة السبانخ مع الأفوكادو والتوت -->
+        <div class="card">
+          <img
+            src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="سلطة السبانخ مع الأفوكادو والتوت"
+            loading="lazy"
+          />
+          <h3 class="card-title"
+              data-ar="سلطة السبانخ مع الأفوكادو والتوت"
+              data-en="Spinach Avocado Berry Salad">
+            سلطة السبانخ مع الأفوكادو والتوت
+          </h3>
+          <p class="card-text"
+             data-ar="سبانخ طازجة، شرائح أفوكادو، توت أزرق، لوز محمص، بذور الشيا، زيت زيتون، وعصير ليمون."
+             data-en="Fresh spinach, avocado slices, blueberries, roasted almonds, chia seeds, olive oil, and lemon juice.">
+            سبانخ طازجة، شرائح أفوكادو، توت أزرق، لوز محمص، بذور الشيا، زيت زيتون، وعصير ليمون.
+          </p>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&w=800"
+            alt="فطور صحي متكامل"
+            loading="lazy"
+          />
+          <h3 class="card-title" data-ar="فطور صحي متكامل" data-en="Complete Healthy Breakfast">
+            فطور صحي متكامل
+          </h3>
+          <p class="card-text"
+             data-ar="يوفر طاقة طويلة خلال اليوم وغني بالألياف والفيتامينات."
+             data-en="Provides long-lasting energy and is rich in fiber and vitamins.">
+            يوفر طاقة طويلة خلال اليوم وغني بالألياف والفيتامينات.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- النظام الصحي -->
+    <section id="lifestyle">
+      <div class="section-header">
+        <h2 class="section-title" data-ar="النظام الصحي العام" data-en="Healthy Lifestyle">النظام الصحي العام</h2>
+        <p class="section-subtitle"
+           data-ar="نظام صحي متكامل يعتمد على النوم الجيد، الحركة اليومية، التغذية المتوازنة، والصحة النفسية."
+           data-en="A complete healthy lifestyle based on good sleep, daily movement, balanced nutrition, and mental health.">
+          نظام صحي متكامل يعتمد على النوم الجيد، الحركة اليومية، التغذية المتوازنة، والصحة النفسية.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <h3 class="card-title" data-ar="النوم الصحي" data-en="Healthy Sleep">النوم الصحي</h3>
+          <p class="card-text"
+             data-ar="النوم من 7 إلى 8 ساعات يوميًا يساعد على تحسين التركيز، المزاج، وصحة الدماغ والجسم."
+             data-en="Sleeping 7–8 hours daily helps improve focus, mood, and brain and body health.">
+            النوم من 7 إلى 8 ساعات يوميًا يساعد على تحسين التركيز، المزاج، وصحة الدماغ والجسم.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title" data-ar="الحركة اليومية" data-en="Daily Movement">الحركة اليومية</h3>
+          <p class="card-text"
+             data-ar="المشي أو أي نشاط خفيف لمدة 20–30 دقيقة يوميًا يحسن الدورة الدموية ويقلل من الخمول."
+             data-en="Walking or light activity for 20–30 minutes daily improves circulation and reduces fatigue.">
+            المشي أو أي نشاط خفيف لمدة 20–30 دقيقة يوميًا يحسن الدورة الدموية ويقلل من الخمول.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title" data-ar="الصحة النفسية" data-en="Mental Health">الصحة النفسية</h3>
+          <p class="card-text"
+             data-ar="تخصيص وقت للاسترخاء أو التأمل أو القراءة يساعد على تقليل التوتر وتحسين المزاج."
+             data-en="Allocating time for relaxation, meditation, or reading helps reduce stress and improve mood.">
+            تخصيص وقت للاسترخاء أو التأمل أو القراءة يساعد على تقليل التوتر وتحسين المزاج.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- الوصفات -->
+    <section id="recipes">
+      <div class="section-header">
+        <h2 class="section-title" data-ar="الوصفات الصحية" data-en="Healthy Recipes">الوصفات الصحية</h2>
+        <p class="section-subtitle"
+           data-ar="وصفات بسيطة ومغذية وسهلة التحضير، مع شرح للمكونات والفوائد."
+           data-en="Simple, nutritious, and easy-to-prepare recipes, with explanation of ingredients and benefits.">
+          وصفات بسيطة ومغذية وسهلة التحضير، مع شرح للمكونات والفوائد.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <h3 class="card-title" data-ar="سلطة البروتين الخضراء" data-en="Green Protein Salad">
+            سلطة البروتين الخضراء
+          </h3>
+          <p class="card-text"
+             data-ar="خس، سبانخ، دجاج مشوي، حمص، زيت زيتون، ليمون."
+             data-en="Lettuce, spinach, grilled chicken, chickpeas, olive oil, lemon.">
+            خس، سبانخ، دجاج مشوي، حمص، زيت زيتون، ليمون.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title" data-ar="سلطة السبانخ مع الأفوكادو والتوت" data-en="Spinach Avocado Berry Salad">
+            سلطة السبانخ مع الأفوكادو والتوت
+          </h3>
+          <p class="card-text"
+             data-ar="سبانخ طازجة، أفوكادو، توت أزرق، لوز، بذور الشيا، زيت زيتون، ليمون."
+             data-en="Fresh spinach, avocado, blueberries, almonds, chia seeds, olive oil, lemon.">
+            سبانخ طازجة، أفوكادو، توت أزرق، لوز، بذور الشيا، زيت زيتون، ليمون.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- الحاسبات -->
+    <section id="calculators">
+      <div class="section-header">
+        <h2 class="section-title" data-ar="الحاسبات الصحية المتقدمة" data-en="Advanced Health Calculators">
+          الحاسبات الصحية المتقدمة
+        </h2>
+        <p class="section-subtitle"
+           data-ar="أدخل بياناتك للحصول على تحليل دقيق للسعرات الحرارية، مؤشر كتلة الجسم، نسبة الدهون، كمية الماء اليومية، وكمية البروتين اليومية."
+           data-en="Enter your data to get accurate analysis of calories, BMI, fat percentage, daily water, and daily protein.">
+          أدخل بياناتك للحصول على تحليل دقيق للسعرات الحرارية، مؤشر كتلة الجسم، نسبة الدهون، كمية الماء اليومية، وكمية البروتين اليومية.
+        </p>
+      </div>
+
+      <div class="calculators-grid">
+        <!-- السعرات -->
+        <div class="calc-card">
+          <h3 data-ar="حاسبة السعرات الحرارية" data-en="Calories Calculator">حاسبة السعرات الحرارية</h3>
+          <label data-ar="الجنس:" data-en="Gender:">الجنس:</label>
+          <select id="calGender">
+            <option value="male" data-ar="ذكر" data-en="Male">ذكر</option>
+            <option value="female" data-ar="أنثى" data-en="Female">أنثى</option>
+          </select>
+
+          <label data-ar="العمر (سنة):" data-en="Age (years):">العمر (سنة):</label>
+          <input type="number" id="calAge" />
+
+          <label data-ar="الطول (سم):" data-en="Height (cm):">الطول (سم):</label>
+          <input type="number" id="calHeight" />
+
+          <label data-ar="الوزن (كجم):" data-en="Weight (kg):">الوزن (كجم):</label>
+          <input type="number" id="calWeight" />
+
+          <label data-ar="مستوى النشاط:" data-en="Activity level:">مستوى النشاط:</label>
+          <select id="calActivity">
+            <option value="1.2" data-ar="قليل جدًا" data-en="Very low">قليل جدًا</option>
+            <option value="1.375" data-ar="خفيف" data-en="Light">خفيف</option>
+            <option value="1.55" data-ar="متوسط" data-en="Moderate">متوسط</option>
+            <option value="1.725" data-ar="عالٍ" data-en="High">عالٍ</option>
+            <option value="1.9" data-ar="عالٍ جدًا" data-en="Very high">عالٍ جدًا</option>
+          </select>
+
+          <button class="calc-btn" id="calcCaloriesBtn" data-ar="احسب السعرات" data-en="Calculate calories">
+            احسب السعرات
+          </button>
+          <div class="calc-result">
+            <p data-ar="السعرات اليومية التقريبية:" data-en="Approximate daily calories:">
+              السعرات اليومية التقريبية:
+              <span id="caloriesResult">-</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- BMI -->
+        <div class="calc-card">
+          <h3 data-ar="حاسبة مؤشر كتلة الجسم (BMI)" data-en="BMI Calculator">حاسبة مؤشر كتلة الجسم (BMI)</h3>
+          <label data-ar="الطول (سم):" data-en="Height (cm):">الطول (سم):</label>
+          <input type="number" id="bmiHeight" />
+
+          <label data-ar="الوزن (كجم):" data-en="Weight (kg):">الوزن (كجم):</label>
+          <input type="number" id="bmiWeight" />
+
+          <button class="calc-btn" id="calcBmiBtn" data-ar="احسب BMI" data-en="Calculate BMI">احسب BMI</button>
+          <div class="calc-result">
+            <p data-ar="قيمة BMI:" data-en="BMI value:">قيمة BMI: <span id="bmiResult">-</span></p>
+            <p data-ar="الحالة:" data-en="Status:">الحالة: <span id="bmiStatus">-</span></p>
+          </div>
+        </div>
+
+        <!-- نسبة الدهون -->
+        <div class="calc-card">
+          <h3 data-ar="حاسبة نسبة الدهون التقريبية" data-en="Approximate Fat Percentage">
+            حاسبة نسبة الدهون التقريبية
+          </h3>
+          <label data-ar="الطول (سم):" data-en="Height (cm):">الطول (سم):</label>
+          <input type="number" id="fatHeight" />
+
+          <label data-ar="الخصر (سم):" data-en="Waist (cm):">الخصر (سم):</label>
+          <input type="number" id="fatWaist" />
+
+          <label data-ar="الرقبة (سم):" data-en="Neck (cm):">الرقبة (سم):</label>
+          <input type="number" id="fatNeck" />
+
+          <button class="calc-btn" id="calcFatBtn" data-ar="احسب نسبة الدهون" data-en="Calculate fat %">
+            احسب نسبة الدهون
+          </button>
+          <div class="calc-result">
+            <p data-ar="نسبة الدهون التقريبية:" data-en="Approximate fat percentage:">
+              نسبة الدهون التقريبية:
+              <span id="fatResult">-</span>%
+            </p>
+          </div>
+        </div>
+
+        <!-- الماء -->
+        <div class="calc-card">
+          <h3 data-ar="حاسبة الماء اليومي" data-en="Daily Water Calculator">حاسبة الماء اليومي</h3>
+          <label data-ar="الوزن (كجم):" data-en="Weight (kg):">الوزن (كجم):</label>
+          <input type="number" id="waterWeight" />
+
+          <button class="calc-btn" id="calcWaterBtn" data-ar="احسب كمية الماء" data-en="Calculate water">
+            احسب كمية الماء
+          </button>
+          <div class="calc-result">
+            <p data-ar="كمية الماء اليومية:" data-en="Daily water amount:">
+              كمية الماء اليومية:
+              <span id="waterResult">-</span> لتر
+            </p>
+          </div>
+        </div>
+
+        <!-- البروتين -->
+        <div class="calc-card">
+          <h3 data-ar="حاسبة البروتين اليومي" data-en="Daily Protein Calculator">حاسبة البروتين اليومي</h3>
+          <label data-ar="الوزن (كجم):" data-en="Weight (kg):">الوزن (كجم):</label>
+          <input type="number" id="proteinWeight" />
+
+          <label data-ar="الهدف:" data-en="Goal:">الهدف:</label>
+          <select id="proteinGoal">
+            <option value="1.2" data-ar="وزن طبيعي" data-en="Normal weight">وزن طبيعي</option>
+            <option value="1.6" data-ar="تنشيف" data-en="Cutting">تنشيف</option>
+            <option value="2.0" data-ar="زيادة عضل" data-en="Muscle gain">زيادة عضل</option>
+          </select>
+
+          <button class="calc-btn" id="calcProteinBtn" data-ar="احسب البروتين" data-en="Calculate protein">
+            احسب البروتين
+          </button>
+          <div class="calc-result">
+            <p data-ar="كمية البروتين اليومية:" data-en="Daily protein amount:">
+              كمية البروتين اليومية:
+              <span id="proteinResult">-</span> جرام
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- مكتبة التمارين -->
+    <section id="exercise-library">
+      <div class="section-header">
+        <h2 class="section-title" data-ar="مكتبة التمارين" data-en="Exercise Library">مكتبة التمارين</h2>
+        <p class="section-subtitle"
+           data-ar="مجموعة من التمارين الأساسية مع وصف مختصر وفوائد لكل تمرين."
+           data-en="A set of basic exercises with short descriptions and benefits for each.">
+          مجموعة من التمارين الأساسية مع وصف مختصر وفوائد لكل تمرين.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <h3 class="card-title" data-ar="تمارين البطن والوسط (Core)" data-en="Core Exercises">
+            تمارين البطن والوسط (Core)
+          </h3>
+          <p class="card-text"
+             data-ar="تشمل البلانك، الكرنش، وتمارين دوران الجذع، وتساعد على تقوية عضلات الوسط ودعم الظهر."
+             data-en="Includes plank, crunches, and trunk rotation, helping strengthen core muscles and support the back.">
+            تشمل البلانك، الكرنش، وتمارين دوران الجذع، وتساعد على تقوية عضلات الوسط ودعم الظهر.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title" data-ar="تمارين الإطالة" data-en="Stretching Exercises">تمارين الإطالة</h3>
+          <p class="card-text"
+             data-ar="تحسن المرونة وتقلل الشد العضلي بعد التمرين، ويمكن ممارستها يوميًا."
+             data-en="Improve flexibility and reduce muscle tension after workouts, can be done daily.">
+            تحسن المرونة وتقلل الشد العضلي بعد التمرين، ويمكن ممارستها يوميًا.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- مكتبة الأطعمة -->
+    <section id="food-library">
+      <div class="section-header">
+        <h2 class="section-title" data-ar="مكتبة الأطعمة الصحية" data-en="Healthy Food Library">
+          مكتبة الأطعمة الصحية
+        </h2>
+        <p class="section-subtitle"
+           data-ar="أطعمة صحية متنوعة مع وصف مختصر وفوائد لكل نوع."
+           data-en="Various healthy foods with short descriptions and benefits for each type.">
+          أطعمة صحية متنوعة مع وصف مختصر وفوائد لكل نوع.
+        </p>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <h3 class="card-title" data-ar="الفواكه المشكلة" data-en="Mixed Fruits">الفواكه المشكلة</h3>
+          <p class="card-text"
+             data-ar="تفاح، موز، توت، برتقال، وغيرها من الفواكه الغنية بالفيتامينات والألياف."
+             data-en="Apple, banana, berries, orange, and other fruits rich in vitamins and fiber.">
+            تفاح، موز، توت، برتقال، وغيرها من الفواكه الغنية بالفيتامينات والألياف.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title" data-ar="المكسرات الصحية" data-en="Healthy Nuts">المكسرات الصحية</h3>
+          <p class="card-text"
+             data-ar="لوز، جوز، فستق، كاجو بدون ملح، غنية بالدهون الصحية والبروتين."
+             data-en="Almonds, walnuts, pistachios, cashews without salt, rich in healthy fats and protein.">
+            لوز، جوز، فستق، كاجو بدون ملح، غنية بالدهون الصحية والبروتين.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- نصائح يومية -->
+    <section id="daily-tips">
+      <div class="section-header">
+        <h2 class="section-title" data-ar="نصائح يومية لصحة أفضل" data-en="Daily Tips for Better Health">
+          نصائح يومية لصحة أفضل
+        </h2>
+        <p class="section-subtitle"
+           data-ar="نصائح بسيطة يمكن تطبيقها يوميًا لتحسين صحتك بشكل تدريجي."
+           data-en="Simple tips you can apply daily to improve your health gradually.">
+          نصائح بسيطة يمكن تطبيقها يوميًا لتحسين صحتك بشكل تدريجي.
+        </p>
+      </div>
+
+      <div class="info-box" id="tipBox">
+        <p id="tipText"
+           data-ar="اشرب الماء بانتظام خلال اليوم، وحاول أن تصل إلى 6–8 أكواب يوميًا."
+           data-en="Drink water regularly throughout the day and aim for 6–8 cups daily.">
+          اشرب الماء بانتظام خلال اليوم، وحاول أن تصل إلى 6–8 أكواب يوميًا.
+        </p>
+        <button class="calc-btn" id="nextTipBtn" data-ar="نصيحة أخرى" data-en="Next tip">
+          نصيحة أخرى
+        </button>
+      </div>
+    </section>
+
+    <!-- تحليل صحتك -->
+    <section id="analysis">
+      <div class="section-header">
+        <h2 class="section-title" data-ar="تحليل صحتك" data-en="Health Analysis">تحليل صحتك</h2>
+        <p class="section-subtitle"
+           data-ar="يعتمد التحليل على نتائج الحاسبات ليعطيك صورة أوضح عن حالتك الصحية الحالية."
+           data-en="Analysis is based on calculator results to give you a clearer picture of your current health.">
+          يعتمد التحليل على نتائج الحاسبات ليعطيك صورة أوضح عن حالتك الصحية الحالية.
+        </p>
+      </div>
+
+      <div class="info-box" id="analysisBox">
+        <p id="analysisResult"
+           data-ar="أدخل بياناتك في الحاسبات للحصول على تحليل كامل لحالتك الصحية، ثم راقب التغيرات أسبوعيًا."
+           data-en="Enter your data in the calculators to get a full analysis of your health, then track changes weekly.">
+          أدخل بياناتك في الحاسبات للحصول على تحليل كامل لحالتك الصحية، ثم راقب التغيرات أسبوعيًا.
+        </p>
+      </div>
+    </section>
+
+    <!-- تواصل -->
+    <section id="contact">
+      <div class="section-header">
+        <h2 class="section-title" data-ar="تواصل" data-en="Contact">تواصل</h2>
+        <p class="section-subtitle"
+           data-ar="للملاحظات أو الاقتراحات أو الدعم، يمكنك التواصل عبر البريد أو إنستغرام."
+           data-en="For feedback, suggestions, or support, you can contact via email or Instagram.">
+          للملاحظات أو الاقتراحات أو الدعم، يمكنك التواصل عبر البريد أو إنستغرام.
+        </p>
+      </div>
+
+      <div class="info-box">
+        <p data-ar="البريد:" data-en="Email:">
+          البريد: <strong>fhdmsdbdallhbnslamh@gmail.com</strong>
+        </p>
+        <p data-ar="إنستغرام:" data-en="Instagram:">
+          إنستغرام: <strong>f0f.e1</strong>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      الموقع من تطوير المبرمج <strong>فهد</strong> —
+      البريد: <strong>fhdmsdbdallhbnslamh@gmail.com</strong> —
+      إنستغرام: <strong>f0f.e1</strong>
+    </p>
+  </footer>
+
+  <button id="scrollTopBtn">▲</button>
+
+  <script>
+    const themeToggle = document.getElementById("themeToggle");
+    const langToggle = document.getElementById("langToggle");
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    let currentLang = "ar";
+
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+    });
+
+    function switchLang(lang) {
+      document.querySelectorAll("[data-ar][data-en]").forEach(el => {
+        el.textContent = el.getAttribute(lang === "ar" ? "data-ar" : "data-en");
+      });
+      document.documentElement.lang = lang === "ar" ? "ar" : "en";
+    }
+
+    langToggle.addEventListener("click", () => {
+      currentLang = currentLang === "ar" ? "en" : "ar";
+      switchLang(currentLang);
+    });
+
+    window.addEventListener("scroll", () => {
+      scrollTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+    });
+
+    scrollTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // حاسبة السعرات
+    document.getElementById("calcCaloriesBtn").addEventListener("click", () => {
+      const gender = document.getElementById("calGender").value;
+      const age = Number(document.getElementById("calAge").value);
+      const height = Number(document.getElementById("calHeight").value);
+      const weight = Number(document.getElementById("calWeight").value);
+      const activity = Number(document.getElementById("calActivity").value);
+
+      if (!age || !height || !weight) {
+        document.getElementById("caloriesResult").textContent =
+          currentLang === "ar" ? "أدخل جميع البيانات" : "Enter all data";
+        return;
+      }
+
+      let bmr = gender === "male"
+        ? 10 * weight + 6.25 * height - 5 * age + 5
+        : 10 * weight + 6.25 * height - 5 * age - 161;
+
+      const tdee = Math.round(bmr * activity);
+      document.getElementById("caloriesResult").textContent = tdee;
+    });
+
+    // حاسبة BMI
+    document.getElementById("calcBmiBtn").addEventListener("click", () => {
+      const height = Number(document.getElementById("bmiHeight").value);
+      const weight = Number(document.getElementById("bmiWeight").value);
+
+      if (!height || !weight) {
+        document.getElementById("bmiResult").textContent =
+          currentLang === "ar" ? "أدخل جميع البيانات" : "Enter all data";
+        document.getElementById("bmiStatus").textContent = "-";
+        return;
+      }
+
+      const bmi = weight / ((height / 100) ** 2);
+      const bmiRounded = bmi.toFixed(1);
+
+      let status =
+        bmi < 18.5 ? (currentLang === "ar" ? "نقص وزن" : "Underweight") :
+        bmi < 25   ? (currentLang === "ar" ? "وزن طبيعي" : "Normal") :
+        bmi < 30   ? (currentLang === "ar" ? "زيادة وزن" : "Overweight") :
+                     (currentLang === "ar" ? "سمنة" : "Obesity");
+
+      document.getElementById("bmiResult").textContent = bmiRounded;
+      document.getElementById("bmiStatus").textContent = status;
+    });
+
+    // حاسبة نسبة الدهون (تقدير بسيط)
+    document.getElementById("calcFatBtn").addEventListener("click", () => {
+      const height = Number(document.getElementById("fatHeight").value);
+      const waist = Number(document.getElementById("fatWaist").value);
+      const neck = Number(document.getElementById("fatNeck").value);
+
+      if (!height || !waist || !neck) {
+        document.getElementById("fatResult").textContent =
+          currentLang === "ar" ? "أدخل جميع البيانات" : "Enter all data";
+        return;
+      }
+
+      const ratio = (waist - neck) / height;
+      const fatPercent = Math.round(ratio * 100);
+
+      document.getElementById("fatResult").textContent = fatPercent;
+    });
+
+    // حاسبة الماء
+    document.getElementById("calcWaterBtn").addEventListener("click", () => {
+      const weight = Number(document.getElementById("waterWeight").value);
+
+      if (!weight) {
+        document.getElementById("waterResult").textContent =
+          currentLang === "ar" ? "أدخل الوزن" : "Enter weight";
+        return;
+      }
+
+      const liters = (weight * 0.035).toFixed(1);
+      document.getElementById("waterResult").textContent = liters;
+    });
+
+    // حاسبة البروتين
+    document.getElementById("calcProteinBtn").addEventListener("click", () => {
+      const weight = Number(document.getElementById("proteinWeight").value);
+      const goal = Number(document.getElementById("proteinGoal").value);
+
+      if (!weight) {
+        document.getElementById("proteinResult").textContent =
+          currentLang === "ar" ? "أدخل الوزن" : "Enter weight";
+        return;
+      }
+
+      const grams = Math.round(weight * goal);
+      document.getElementById("proteinResult").textContent = grams;
+    });
+
+    // نصائح يومية
+    const tips = [
+      {
+        ar: "اشرب الماء بانتظام خلال اليوم، وحاول أن تصل إلى 6–8 أكواب يوميًا.",
+        en: "Drink water regularly throughout the day and aim for 6–8 cups daily."
+      },
+      {
+        ar: "حاول المشي لمدة 20 دقيقة يوميًا لتحسين الدورة الدموية وتقليل التوتر.",
+        en: "Try walking for 20 minutes daily to improve circulation and reduce stress."
+      },
+      {
+        ar: "قلل من السكريات المصنعة واستبدلها بالفواكه الطبيعية قدر الإمكان.",
+        en: "Reduce processed sugars and replace them with natural fruits whenever possible."
+      },
+      {
+        ar: "احرص على النوم في وقت ثابت يوميًا لتحسين جودة النوم.",
+        en: "Try to sleep at a fixed time daily to improve sleep quality."
+      }
+    ];
+
+    let tipIndex = 0;
+    const tipText = document.getElementById("tipText");
+    const nextTipBtn = document.getElementById("nextTipBtn");
+
+    nextTipBtn.addEventListener("click", () => {
+      tipIndex = (tipIndex + 1) % tips.length;
+      tipText.textContent = currentLang === "ar" ? tips[tipIndex].ar : tips[tipIndex].en;
+    });
+  </script>
+</body>
+</html>
+```
